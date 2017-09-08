@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+<script>
+   $(document).ready(function (){
+   var jsonString = '[{"firstname":"John","lastname":"Venkat","gender":"Male","salary":50000},{"firstname":"Alekhya","lastname":"P","gender":"Female","salary":40000}]';
+   
+   var employeeJSON = JSON.parse(jsonString);
+   
+   var result = '';
+   $.each(employeeJSON,function(i, item){
+   result += 'First Name =' +item.firstname +'</br>';
+   result += 'Last Name =' +item.lastname +'</br>';
+   result += 'Gender =' +item.gender + '</br>';
+   result += 'Salary =' +item.salary + '</br></br>';
+   });
+   $('#resultdiv').html(result);
+   });
+</script>
+</head>
+<body>
+<div id="resultdiv"></div>
+</body>
+</html>
